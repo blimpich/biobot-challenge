@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import { KitSearch } from "./KitSearch";
 import { Kit } from "./Kit";
 import { KitCard } from "./KitCard";
