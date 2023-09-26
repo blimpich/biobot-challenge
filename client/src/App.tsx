@@ -5,29 +5,7 @@ import { Kit } from "./Kit";
 import { KitCard } from "./KitCard";
 import { Box } from "@mui/material";
 
-const BIOBOT_BLUE = "#161B2A";
-const BABY_BLUE = "#00A4FF";
-const YELLOW = "#FDCD47";
-const GRAY = "#F7F8FD";
-
-const appStyle = {
-  height: "100vh",
-  backgroundColor: GRAY,
-};
-
-const headerStyle = {
-  backgroundColor: BIOBOT_BLUE,
-  display: "flex",
-  color: "white",
-  justifyContent: "center",
-};
-
-const searchContainer = {
-  color: BABY_BLUE,
-  margin: 50,
-};
-
-function App() {
+export default function App() {
   const [kit, setKit] = useState<Kit>();
 
   return (
@@ -49,4 +27,24 @@ function App() {
   );
 }
 
-export default App;
+const BIOBOT_BLUE = "#161B2A";
+const BABY_BLUE = "#00A4FF";
+const YELLOW = "#FDCD47";
+const GRAY = "#F7F8FD";
+
+const appStyle = {
+  height: "100vh",
+  backgroundColor: GRAY,
+};
+
+const headerStyle = {
+  backgroundColor: BIOBOT_BLUE,
+  display: "flex",
+  color: "white",
+  justifyContent: "center",
+};
+
+const searchContainer = {
+  color: BABY_BLUE,
+  margin: 50,
+};

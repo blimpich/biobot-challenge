@@ -1,18 +1,22 @@
 import axios from "axios";
+import { useMemo } from "react";
+import { Kit } from "./Kit";
 
 export function useApiHook() {
-  return {
-    getKitsFiltered: (label_id: string) => {
-      return axios
-        .get(`${base_url}/api/kits/filter?label_id=${label_id}`)
-        .then((response) => {
-          return response.data;
-        })
-        .catch((error) => {
-          console.error("Error fetching autocomplete data:", error);
-        });
-    },
-  } as const;
+  return useMemo(
+    () => ({
+      getKitsFiltered: (label_id: string): Promise<ReadonlyArray<Kit>> =>
+        axios
+          .get(`${BASE_URL}/api/kits/filter?label_id=${label_id}`)
+          .then((response) => {
+            return response.data;
+          })
+          .catch((error) => {
+            console.error("Error fetching kit data:", error);
+          }),
+    }),
+    []
+  );
 }
 
-const base_url = "http://localhost:3000";
+const BASE_URL = "http://localhost:3000";

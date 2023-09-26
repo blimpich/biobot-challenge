@@ -3,6 +3,7 @@ import { TextField } from "@mui/material";
 import { Autocomplete } from "@mui/material";
 import { Kit } from "./Kit";
 import { useApiHook } from "./UseApiHook";
+import debounce from "lodash/debounce";
 
 export function KitSearch({ setKit }: Props) {
   const [inputValue, setInputValue] = useState("");
@@ -14,14 +15,12 @@ export function KitSearch({ setKit }: Props) {
     (event: React.SyntheticEvent<Element, Event>, newInputValue: string) => {
       setInputValue(newInputValue);
 
-      const getKits = async () => {
-        const data = await getKitsFiltered(newInputValue);
-        setKits(data);
-      };
-
-      if (newInputValue !== "") {
-        getKits();
-      }
+      debounce(async (newInputValue: string) => {
+        if (newInputValue !== "") {
+          const data = await getKitsFiltered(newInputValue);
+          setKits(data);
+        }
+      }, 400)(newInputValue);
     },
     [getKitsFiltered]
   );
