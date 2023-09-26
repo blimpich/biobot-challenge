@@ -14,11 +14,11 @@ export default function App() {
         <img
           alt="BioBot logo"
           src="https://biobot.io/wp-content/themes/biobot/assets/img/iso-white.svg"
-          style={{ marginRight: 10 }}
+          style={logoStyle}
         />
         <h1>Kit Search</h1>
       </Box>
-      <Box style={searchContainer}>
+      <Box style={searchContainerStyle}>
         <KitSearch setKit={setKit} />
       </Box>
 
@@ -29,7 +29,6 @@ export default function App() {
 
 const BIOBOT_BLUE = "#161B2A";
 const BABY_BLUE = "#00A4FF";
-const YELLOW = "#FDCD47";
 const GRAY = "#F7F8FD";
 
 const appStyle = {
@@ -44,7 +43,11 @@ const headerStyle = {
   justifyContent: "center",
 };
 
-const searchContainer = {
+const searchContainerStyle = {
   color: BABY_BLUE,
   margin: 50,
+};
+
+const logoStyle = {
+  marginRight: 10,
 };

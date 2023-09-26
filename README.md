@@ -15,3 +15,9 @@
 3. `npm run start`
 
 Note: if it asks you to run it on a port other than 3000 say yes, that's fine.
+
+## TODO:
+
+- Add unit testing so that future modifications know if they break any existing functionality
+- Add error UI in the case that the request to the server fails
+- Add accessibility labels to the components so that they're usable by people with screen readers

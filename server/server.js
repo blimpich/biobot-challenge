@@ -4,6 +4,7 @@ const cors = require("cors");
 const PORT = process.env.PORT || 3000;
 const kits = require("./fixture");
 
+// TODO: in a production environment we shouldn't allow any origin to access our API
 app.use(cors());
 
 app.get("/api/kits/filter", (req, res) => {
